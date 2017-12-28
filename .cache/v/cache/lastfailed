@@ -1,0 +1,3 @@
+{
+  "tests/test_regex_functions.py::TestPhoneNumbers::()::test_phone_number": true
+}

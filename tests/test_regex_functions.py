@@ -1,6 +1,6 @@
-from ..regex_functions import is_phone_number
-from ..regex_functions import is_city_state_zip
-from ..regex_functions import is_link
+from dsst_locations.regex_functions import is_phone_number
+from dsst_locations.regex_functions import is_city_state_zip
+from dsst_locations.regex_functions import is_link
 
 
 class TestPhoneNumbers:

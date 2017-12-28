@@ -1,0 +1,5 @@
+{
+  "test_get_dsst_locations.py": true,
+  "test_location_parsing.py": true,
+  "test_regex_functions.py": true
+}

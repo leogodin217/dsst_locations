@@ -1,5 +1,4 @@
-import pytest
-from ..get_dsst_locations import get_locations_from_raw_data
+from dsst_locations.get_dsst_locations import get_locations_from_raw_data
 
 
 class TestGetDSSTLocations:
