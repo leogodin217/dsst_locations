@@ -17,5 +17,15 @@ def parse_location(location_items):
     """
     location = {}
     location['id'] = location_items[0]
-    # location['name'] = location_items[1]
+    location['name'] = location_items[1]
+    del location_items[0]  # Don't need this anymore
+    del location_items[1]  # Don't need this anymore
+
+    # get links
+    links = []
+    for index, value in enumerate(location_items):
+        if is_link(value):
+            links.append(value)
+            del location_items[index]
+    location['links'] = links
     return location
