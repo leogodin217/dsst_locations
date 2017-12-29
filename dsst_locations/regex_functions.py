@@ -8,12 +8,12 @@ def is_phone_number(input):
 
 
 def is_city_state_zip(input):
-    return re.match('[\w ]+, [A-Z][A-Z] \d{5}', input)
+    return re.match('[\w .]+,\s+[A-Z][A-Z]\s+\d{5}', input)
 
 
 def get_city(input):
     result = None
-    match = re.match('^([\w ]+),', input)
+    match = re.match('^([\w .]+),', input)
     if match:
         result = match.groups()[0]
     return result
@@ -37,3 +37,7 @@ def get_zip_code(input):
 
 def is_link(input):
     return re.match('^https?://', input)
+
+
+def is_street_address(input):
+    return re.match('\d+\s[\w\s]+', input)

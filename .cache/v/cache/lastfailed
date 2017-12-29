@@ -1,5 +1,1 @@
-{
-  "tests/test_location_parsing.py::TestLocationParsing::()::test_city_is_parsed": true,
-  "tests/test_location_parsing.py::TestLocationParsing::()::test_state_is_parsed": true,
-  "tests/test_location_parsing.py::TestLocationParsing::()::test_zip_code_is_parsed": true
-}
+{}
