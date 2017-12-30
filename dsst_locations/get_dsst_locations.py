@@ -38,3 +38,6 @@ def get_locations_from_raw_data(raw_data):
     for location in raw_locations:
         locations.append([location for location in location.stripped_strings])
     return locations
+
+def get_new_locations(existing_location_ids):
+    pass
