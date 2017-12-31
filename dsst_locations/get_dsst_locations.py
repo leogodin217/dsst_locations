@@ -39,5 +39,16 @@ def get_locations_from_raw_data(raw_data):
         locations.append([location for location in location.stripped_strings])
     return locations
 
-def get_new_locations(existing_location_ids):
-    pass
+
+def get_new_locations(existing_location_ids, locations):
+    # Return only the locations where the first element is not equal to one
+    # of the existing location ids
+    return [location for location in locations
+        if location[0] not in existing_location_ids]
+
+
+def get_deleted_locations(existing_location_ids, locations):
+    # Return the first element of the location if it is not in one of the
+    # existing location ids
+    location_ids = [location[0] for location in locations]
+    return [id for id in existing_location_ids if id not in location_ids]

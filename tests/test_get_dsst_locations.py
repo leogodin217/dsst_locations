@@ -1,4 +1,6 @@
 from dsst_locations.get_dsst_locations import get_locations_from_raw_data
+from dsst_locations.get_dsst_locations import get_new_locations
+from dsst_locations.get_dsst_locations import get_deleted_locations
 
 
 class TestGetDSSTLocations:
@@ -57,4 +59,24 @@ class TestGetDSSTLocations:
         locations[0].should.have.length_of(6)
         locations[1].should.have.length_of(6)
 
+    def test_get_new_locations(self):
+        existing_location_ids = ['1111', '2222', '3333']
+        locations = [
+            ['0000', 'biz'],
+            ['1111', 'foo'],
+            ['2222', 'bar'],
+            ['3333', 'baz'],
+            ['4444', 'buz']
+        ]
+        new_locations = get_new_locations(existing_location_ids, locations)
+        new_locations.should.equal([['0000', 'biz'], ['4444', 'buz']])
 
+    def test_get_deleted_locations(self):
+        existing_location_ids = ['1111', '2222', '3333', '4444']
+        locations = [
+            ['1111', 'foo'],
+            ['3333', 'baz'],
+        ]
+        deleted_locations = get_deleted_locations(
+            existing_location_ids, locations)
+        deleted_locations.should.equal(['2222', '4444'])
