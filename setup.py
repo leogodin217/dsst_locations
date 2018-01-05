@@ -8,4 +8,14 @@ setup(name='DSST Locations',
       author_email='leogodin217@gmail.com',
       license='MIT',
       packages=['dsst_locations'],
-      zip_safe=False)
+      zip_safe=False,
+      install_requires=[
+          'beautifulsoup4',
+          'sure',
+          'jupyter',
+          'requests',
+          'pandas',
+          'boto3',
+          'pytest',
+          'pytest-watch' 
+      ])
